@@ -1,9 +1,4 @@
-env/
-db/
+venv/
 __pycache__/
 application_key.json
 authentication_key.json
-ai-data.json
-
-# Tasks
-*_solution.py
