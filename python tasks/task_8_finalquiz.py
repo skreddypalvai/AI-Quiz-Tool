@@ -22,10 +22,10 @@ if __name__ == "__main__":
         st.session_state['question_bank'] = []
         screen = st.empty()
         with screen.container():
-            st.header("Quiz Builder")
+            st.header("AI Quiz Generative Tool")
             # Create a new st.form flow control for Data Ingestion
             with st.form("Load Data to Chroma"):
-                st.write("Select PDFs for Ingestion, the topic for the quiz, and click Generate!")
+                st.write("Select the course material PDFs for Ingestion, the relevant topic for the quiz, and click Generate!")
                 
                 processor = DocumentProcessor()
                 processor.ingest_documents()
@@ -44,6 +44,7 @@ if __name__ == "__main__":
                     chroma_creator.create_chroma_collection()
                         
                     if len(processor.pages) > 0:
+                        
                         st.write(f"Generating {questions} questions for topic: {topic_input}.")
                     
                    # Initialize a QuizGenerator class using the topic, number of questrions, and the chroma collection
