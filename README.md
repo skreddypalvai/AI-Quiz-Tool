@@ -22,4 +22,13 @@ Quizzify is an AI Quiz tool which is powered by large language model (Google –
   ```sh
   pip install -r requirements.txt
   ```
+  Make sure to set your authentication key to your working directory and (Edit gitignore file as well):
+  ```sh
+  $env:GOOGLE_APPLICATION_CREDENTIALS = "authentication.json"
+  ```
   Note: I've used the python interpreter version: 3.10.11
+## Project Tasks:
+### 1.PDF Processor:
+We can see the first task is to create the document processor class which will be using for our data ingestion pipeline. This will process the pdf documents and 
+
+  
