@@ -29,6 +29,16 @@ Quizzify is an AI Quiz tool which is powered by large language model (Google –
   Note: I've used the python interpreter version: 3.10.11
 ## Project Tasks:
 ### 1.PDF Processor:
-We can see the first task is to create the document processor class which will be using for our data ingestion pipeline. This will process the pdf documents and 
+The first task involves creating the document processor class, which will be used in our data ingestion pipeline. This class will handle the processing of PDF documents. Initially, we will implement a file uploader widget capable of handling various types of PDF files for ingestion. Then we will generate unique temporary file names for each uploaded file, which can be used for further processing or storage purposes within the application. Then, we will utilize the PyPDFLoader from LangChain to process the uploaded files and extract their pages. Subsequently, we will integrate the extracted pages into the designated class variable. Finally, we will conduct testing using Streamlit run to verify the functionality of the ingestion and processing pipeline for PDF documents. You can see the output below:
+
+
+### 2.Embeddings:
+In this task, we will create the word embeddings by utlizing the vertex AI embeddings by passing our project name and model name ("textembedding-gecko@003"). I have tested the word embeddings for the text "Hello World!". You can see the vectors below:
+
+### 3.ChromaDB:
+In this task, after processing the pdf files from documentprocessor instance, We will split the processed document into text chunks which will be more suitable for embeddings, for splitting I used the charactertextsplitter function from langchain. Next, we will store those chunks in the Chroma database by using the Chroma.from_documents function. Eventually we will create a new method to query the chroma collection.
+
+
+### 4.
 
   
