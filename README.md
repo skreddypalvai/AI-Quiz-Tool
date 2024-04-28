@@ -1,1 +1,3 @@
-AI Quiz Tool
+# Quizzify: AI Quiz Generative Tool
+## About:
+Quizzify is an AI Quiz tool which is powered by large language model (Google – GEMINI). It focuses on providing individuals especially students with accessible and effective means to reinforce their understanding of various topics. Utilizing cutting edge AI methodologies, the tool dynamically generates quizzes based on user provided documents, facilitated by LangChain for document processing and connecting to LLM. It further enhances the learning experience through the integration of Vertex AI for embeddings and the GEMINI large language model. ChromaDB serves as the repository for storing these embeddings, ensuring efficient data management. Moreover, Quizzify leverages Streamlit for its user interfaces, providing an intuitive and interactive platform for users to engage with generated quizzes.
