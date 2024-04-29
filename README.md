@@ -44,6 +44,16 @@ After successfully instantiating DocumentProcessor, EmbeddingClient, and ChromaC
 
 
 ### 5. Creating Quiz Generator class:
-We will create an QuizGenerator class , then initialize LLM (I have used 'Gemini-pro') with respective template (prompt and structure for the quiz), and vectorstore database from the previous task, then we will be using as_retriever function to retrieve relevant context for the quiz topic from the vectorstore. Now, to format the retrieved context and the quiz topic into a structured prompt(template) I have used the libraries including RunnablePassthrough and RunnableParallel from LangChain (refer the documentation for better understanding) and you can see the output below:
+We will create an QuizGenerator class , then initialize LLM (I have used 'Gemini-pro') with respective template (prompt and structure for the quiz), and vectorstore database from the previous task, then we will be using as_retriever function to retrieve relevant context for the quiz topic from the vectorstore. Now, to format the retrieved context and the quiz topic into a structured prompt(template) I have used the libraries including RunnablePassthrough and RunnableParallel from LangChain (refer the documentation for better understanding) passed them into the chain and by invoking it with the topic as a input, it generated the expected response and you can see the output below:
 
   
+### 6. Quiz Algorithm:
+In this task, we will create the QuizGenerator class, define a generate quiz method, and validate quiz method which allow for the generation of a unique quiz with the desired number of questions while ensuring the uniqueness of each question. After generating the relevant string (response) from the previous task (by invoking the chain with the topic), make sure to convert it into Python dictionary format. I have used the json.loads() function as the data is in JSON format. See the output below:
+
+
+### 7. UI for Quiz:
+Now we will work on QuizManager class(working on indexes of the respective questions) and implement the functionality to display quiz questions and choices on the UI by utilizing streamlit. 
+
+
+### 8. Screen State Handling:
+
