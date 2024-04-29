@@ -23,6 +23,7 @@ if __name__ == "__main__":
         screen = st.empty()
         with screen.container():
             st.header("AI Quiz Generative Tool")
+            st.subheader("By Saikiran")
             # Create a new st.form flow control for Data Ingestion
             with st.form("Load Data to Chroma"):
                 st.write("Select the course material PDFs for Ingestion, the relevant topic for the quiz, and click Generate!")
