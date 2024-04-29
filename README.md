@@ -29,6 +29,31 @@ Quizzify is an AI Quiz tool which is powered by large language model (Google –
   Note: I've used the python interpreter version: 3.10.11
 ## Project Tasks:
 ### 1.PDF Processor:
-We can see the first task is to create the document processor class which will be using for our data ingestion pipeline. This will process the pdf documents and 
+The first task involves creating the document processor class, which will be used in our data ingestion pipeline. This class will handle the processing of PDF documents. Initially, we will implement a file uploader widget capable of handling various types of PDF files for ingestion. Then we will generate unique temporary file names for each uploaded file, which can be used for further processing or storage purposes within the application. Then, we will utilize the PyPDFLoader from LangChain to process the uploaded files and extract their pages. Subsequently, we will integrate the extracted pages into the designated class variable. Finally, we will conduct testing using Streamlit run to verify the functionality of the ingestion and processing pipeline for PDF documents. You can see the output below:
+
+
+### 2.Embeddings:
+In this task, we will create the word embeddings by utlizing the vertex AI embeddings by passing our project name and model name ("textembedding-gecko@003"). I have tested the word embeddings for the text "Hello World!". You can see the vectors below:
+
+### 3.ChromaDB:
+In this task, after processing the pdf files from DocumentProcessor instance, We will split the processed document into text chunks which will be more suitable for embeddings, for splitting I used the charactertextsplitter function from langchain. Next, we will store those chunks in the Chroma database by using the Chroma.from_documents function. Eventually we will create a new method to query the chroma collection.
+
+
+### 4.UI for data ingestion:
+After successfully instantiating DocumentProcessor, EmbeddingClient, and ChromaCollectionCreator from previous tasks, now it's time to create a user interface by leveraging Streamlit to prompt users to input the quiz's topic and select the desired number of questions via a slider component as shown in the below output. Additionally, we will be utilizing the query Chroma collection method from the previous task so that users can input a query pertinent to the quiz topic. By utilizing the generated Chroma collection, it will extract relevant information corresponding to the query for quiz question generation.
+
+
+### 5. Creating Quiz Generator class:
+We will create an QuizGenerator class , then initialize LLM (I have used 'Gemini-pro') with respective template (prompt and structure for the quiz), and vectorstore database from the previous task, then we will be using as_retriever function to retrieve relevant context for the quiz topic from the vectorstore. Now, to format the retrieved context and the quiz topic into a structured prompt(template) I have used the libraries including RunnablePassthrough and RunnableParallel from LangChain (refer the documentation for better understanding) passed them into the chain and by invoking it with the topic as a input, it generated the expected response and you can see the output below:
 
   
+### 6. Quiz Algorithm:
+In this task, we will create the QuizGenerator class, define a generate quiz method, and validate quiz method which allow for the generation of a unique quiz with the desired number of questions while ensuring the uniqueness of each question. After generating the relevant string (response) from the previous task (by invoking the chain with the topic), make sure to convert it into Python dictionary format. I have used the json.loads() function as the data is in JSON format. See the output below:
+
+
+### 7. UI for Quiz:
+Now we will work on QuizManager class(working on indexes of the respective questions) and implement the functionality to display quiz questions and choices on the UI by utilizing streamlit. 
+
+
+### 8. Screen State Handling:
+
