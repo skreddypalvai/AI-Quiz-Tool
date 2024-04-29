@@ -36,9 +36,14 @@ The first task involves creating the document processor class, which will be use
 In this task, we will create the word embeddings by utlizing the vertex AI embeddings by passing our project name and model name ("textembedding-gecko@003"). I have tested the word embeddings for the text "Hello World!". You can see the vectors below:
 
 ### 3.ChromaDB:
-In this task, after processing the pdf files from documentprocessor instance, We will split the processed document into text chunks which will be more suitable for embeddings, for splitting I used the charactertextsplitter function from langchain. Next, we will store those chunks in the Chroma database by using the Chroma.from_documents function. Eventually we will create a new method to query the chroma collection.
+In this task, after processing the pdf files from DocumentProcessor instance, We will split the processed document into text chunks which will be more suitable for embeddings, for splitting I used the charactertextsplitter function from langchain. Next, we will store those chunks in the Chroma database by using the Chroma.from_documents function. Eventually we will create a new method to query the chroma collection.
 
 
-### 4.
+### 4.UI for data ingestion:
+After successfully instantiating DocumentProcessor, EmbeddingClient, and ChromaCollectionCreator from previous tasks, now it's time to create a user interface by leveraging Streamlit to prompt users to input the quiz's topic and select the desired number of questions via a slider component as shown in the below output. Additionally, we will be utilizing the query Chroma collection method from the previous task so that users can input a query pertinent to the quiz topic. By utilizing the generated Chroma collection, it will extract relevant information corresponding to the query for quiz question generation.
+
+
+### 5. Creating Quiz Generator class:
+We will create an QuizGenerator class , then initialize LLM (I have used 'Gemini-pro') with respective template (prompt and structure for the quiz), and vectorstore database from the previous task, then we will be using as_retriever function to retrieve relevant context for the quiz topic from the vectorstore. Now, to format the retrieved context and the quiz topic into a structured prompt(template) I have used the libraries including RunnablePassthrough and RunnableParallel from LangChain (refer the documentation for better understanding) and you can see the output below:
 
   
