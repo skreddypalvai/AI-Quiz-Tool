@@ -32,32 +32,31 @@ Quizzify is an AI Quiz tool which is powered by large language model (Google –
 ## Project Tasks:
 ### 1.PDF Processor:
 The first task involves creating the DocumentProcessor class, which will be used in our data ingestion pipeline. This class will handle the processing of PDF documents. Initially, we will implement a file uploader widget capable of handling various types of PDF files for ingestion. Then, we will generate unique temporary file names for each uploaded file, which can be used for further processing or storage purposes within the application. Next, we will utilize [PyPDFLoader](https://python.langchain.com/docs/modules/data_connection/document_loaders/pdf/#using-pypdf) from LangChain to process the uploaded files and extract their pages. Subsequently, we will integrate the extracted pages into the designated class variable. Finally, we will conduct testing using Streamlit run to verify the functionality of the ingestion and processing pipeline for PDF documents. You can see the output below:
-![DocumentIngestion](Images/task 1_.png)
-![DocumentIngestion](Images\task 1_.png)
-![Output:]("C:\Users\saiki\AI Quiz\Images\Task1 _PDF.png")
+![task 1_](https://github.com/skreddypalvai/AI-Quiz/assets/137756791/32c87a13-7937-484e-afbe-0c8b421ecc71)
+![Task1 _PDF](https://github.com/skreddypalvai/AI-Quiz/assets/137756791/2a2bd9de-6d6e-429c-8ba8-06e8febfbfa5)
 ### 2.Embeddings:
 In this task, we will create word embeddings by utilizing the Vertex AI embeddings through [LangChain](https://python.langchain.com/docs/integrations/text_embedding/google_generative_ai/), passing our project name and model name ("textembedding-gecko@003"). I have tested the word embeddings for the text "Hello World!". You can see the vectors below:
-
+![Task2_Embeddings](https://github.com/skreddypalvai/AI-Quiz/assets/137756791/268c26b7-5024-4340-83d4-43b0f2ead58e)
 ### 3.ChromaDB:
 In this task, after processing the PDF files using the DocumentProcessor instance, we will split the processed document into text chunks, which will be more suitable for embeddings. For splitting, I used the [CharacterTextSplitter](https://python.langchain.com/docs/modules/data_connection/document_transformers/character_text_splitter/) function from LangChain. Next, we will store those chunks in the Chroma database using the [Chroma.from_documents](https://python.langchain.com/docs/integrations/vectorstores/chroma/#use-openai-embeddings) function. Eventually, we will create a new method to query the Chroma collection.
-
-
+![Task3_Chroma](https://github.com/skreddypalvai/AI-Quiz/assets/137756791/6c8742be-13a0-4941-b6f2-bd202bc4247d)
 ### 4.UI for data ingestion:
 After successfully instantiating DocumentProcessor, EmbeddingClient, and ChromaCollectionCreator from previous tasks, now it's time to create a user interface by leveraging Streamlit to prompt users to input the quiz's topic and select the desired number of questions via a slider component as shown in the below output. Additionally, we will be utilizing the query Chroma collection method from the previous task so that users can input a query pertinent to the quiz topic. By utilizing the generated Chroma collection, it will extract relevant information corresponding to the query for quiz question generation.
-
-
+![Task 4 0](https://github.com/skreddypalvai/AI-Quiz/assets/137756791/8bd95441-4939-4054-a065-8252e823dd68)
+![Task4 1](https://github.com/skreddypalvai/AI-Quiz/assets/137756791/b0c93c66-e54e-45af-a9ce-bc795865dcae)
 ### 5. Creating Quiz Generator class:
 We will create an QuizGenerator class , then initialize LLM ([I have used 'Gemini-pro'](https://python.langchain.com/docs/integrations/llms/google_vertex_ai_palm/)) with respective [template](https://python.langchain.com/docs/modules/model_io/prompts/few_shot_examples/) prompt and structure for the quiz, and vectorstore database from the previous task, then we will be using [as_retriever]((https://python.langchain.com/docs/integrations/vectorstores/chroma/#retriever-options)) function to retrieve relevant context for the quiz topic from the vectorstore. Now, to format the retrieved context and the quiz topic into a structured prompt(template) I have used the libraries including [RunnablePassthrough and RunnableParallel from LangChain](https://python.langchain.com/docs/expression_language/primitives/passthrough/) (refer the documentation for better understanding) passed them into the chain and by invoking it with the topic as a input, it generated the expected response and you can see the output below:
-
+![Task 5Quiz gen](https://github.com/skreddypalvai/AI-Quiz/assets/137756791/561c73c2-617a-432d-b2e6-7d737e1b7ee8)
   
 ### 6. Quiz Algorithm:
 In this task, we will create the QuizGenerator class, define a generate quiz method, and validate quiz method which allow for the generation of a unique quiz with the desired number of questions while ensuring the uniqueness of each question. After generating the relevant string (response) from the previous task (by invoking the chain with the topic), make sure to convert it into Python dictionary format. I have used the [json.loads()](https://docs.python.org/3/library/json.html) function as the data is in JSON format. See the output below:
 
-
+![Task6_GenQuiz](https://github.com/skreddypalvai/AI-Quiz/assets/137756791/101ac859-9b3f-407b-b735-a36e70a0a784)
 ### 7. UI for Quiz:
 Now, we will work on the QuizManager class, focusing on the indexes of the respective questions, and implement the functionality to display quiz questions and choices on the UI by utilizing Streamlit.
-
+![Task7_quizmanager](https://github.com/skreddypalvai/AI-Quiz/assets/137756791/bd66ae36-fc98-42b6-add9-7a9893034f38)
 ### 8. Screen State Handling:
 
 In the final task, we will generate the quiz by utilizing the necessary classes from the previous tasks and passing the respective arguments. See the final task's(Generative Quiz) demo below:
 
+https://github.com/skreddypalvai/AI-Quiz/assets/137756791/29d8ba98-f703-4d75-b20f-55346eb97755
