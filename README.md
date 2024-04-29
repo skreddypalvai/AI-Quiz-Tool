@@ -32,7 +32,7 @@ Quizzify is an AI Quiz tool which is powered by large language model (Google –
 ## Project Tasks:
 ### 1.PDF Processor:
 The first task involves creating the DocumentProcessor class, which will be used in our data ingestion pipeline. This class will handle the processing of PDF documents. Initially, we will implement a file uploader widget capable of handling various types of PDF files for ingestion. Then, we will generate unique temporary file names for each uploaded file, which can be used for further processing or storage purposes within the application. Next, we will utilize [PyPDFLoader](https://python.langchain.com/docs/modules/data_connection/document_loaders/pdf/#using-pypdf) from LangChain to process the uploaded files and extract their pages. Subsequently, we will integrate the extracted pages into the designated class variable. Finally, we will conduct testing using Streamlit run to verify the functionality of the ingestion and processing pipeline for PDF documents. You can see the output below:
-![DocumentIngestion]("Images/task 1_.png")
+![DocumentIngestion](Images/task 1_.png)
 
 ![Output:]("C:\Users\saiki\AI Quiz\Images\Task1 _PDF.png")
 ### 2.Embeddings:
