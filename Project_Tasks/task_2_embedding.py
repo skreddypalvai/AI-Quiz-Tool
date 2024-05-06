@@ -21,7 +21,7 @@ class EmbeddingClient:
             return None
 
 if __name__ == "__main__":
-    model_name = "textembedding-gecko@003"
+    model_name = "textembedding-gecko@003" #try exploring different embedding models
     project = "Enter your project ID here"
     location = "Your project location :)"
 
