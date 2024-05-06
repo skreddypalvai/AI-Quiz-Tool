@@ -12,8 +12,8 @@ if __name__ == "__main__":
     
     embed_config = {
         "model_name": "textembedding-gecko@003",
-        "project": "my-quiz-project-420005",
-        "location": "us-central1"
+        "project": "Enter your project ID here",
+        "location": "location"
     }
    
     # Add Session State
