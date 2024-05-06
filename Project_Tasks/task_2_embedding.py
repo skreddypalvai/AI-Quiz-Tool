@@ -22,8 +22,8 @@ class EmbeddingClient:
 
 if __name__ == "__main__":
     model_name = "textembedding-gecko@003"
-    project = "my-quiz-project-420005"
-    location = "us-central1"
+    project = "Enter your project ID here"
+    location = "Your project location :)"
 
     embedding_client = EmbeddingClient(model_name, project, location)
     vectors = embedding_client.embed_query("Hello World!")
