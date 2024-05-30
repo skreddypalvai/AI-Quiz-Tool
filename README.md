@@ -49,7 +49,7 @@ In this task, after processing the PDF files using the DocumentProcessor instanc
 ![Task3_Chroma](https://github.com/skreddypalvai/AI-Quiz/assets/137756791/6c8742be-13a0-4941-b6f2-bd202bc4247d)
 
 ### 4.UI for data ingestion:
-After successfully instantiating DocumentProcessor, EmbeddingClient, and ChromaCollectionCreator from previous tasks, now it's time to create a user interface by leveraging Streamlit to prompt users to input the quiz's topic and select the desired number of questions via a slider component as shown in the below output. Additionally, we will be utilizing the query Chroma collection method from the previous task so that users can input a query pertinent to the quiz topic. By utilizing the generated Chroma collection, it will extract relevant information corresponding to the query for quiz question generation.
+After successfully instantiating DocumentProcessor, EmbeddingClient, and ChromaCollectionCreator from previous tasks, now it's time to create a user interface by leveraging Streamlit to prompt users to input the quiz's topic and select the desired number of questions as shown in the below output. Additionally, we will be utilizing the query Chroma collection method from the previous task so that users can input a query pertinent to the quiz topic. By utilizing the generated Chroma collection, it will extract relevant information corresponding to the query for quiz question generation.
 
 ![Task 4 0](https://github.com/skreddypalvai/AI-Quiz/assets/137756791/8bd95441-4939-4054-a065-8252e823dd68)
 
