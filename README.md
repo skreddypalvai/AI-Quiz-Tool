@@ -19,7 +19,7 @@ Quizzify is an AI Quiz tool which is powered by large language model (Google –
     python -m venv env
     ```
     ```sh
-    ./env/Scripts/activate
+    .\env\Scripts\activate
     ```
     ```sh
     pip install -r requirements.txt
