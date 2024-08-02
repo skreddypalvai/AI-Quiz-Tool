@@ -75,6 +75,6 @@ Now, we will work on the QuizManager class, focusing on the indexes of the respe
 In the final task, we will generate the quiz by utilizing the necessary classes from the previous tasks and passing the respective arguments. See the final task's(Generative Quiz) demo below:
 
 
-https://github.com/skreddypalvai/AI-Quiz-Tool/assets/137756791/cb0ba635-dbbc-4ed6-ac76-9569296c93d8
+[https://github.com/skreddypalvai/AI-Quiz-Tool/assets/137756791/cb0ba635-dbbc-4ed6-ac76-9569296c93d8](https://github.com/user-attachments/assets/d0b5a9b7-4ec4-44b2-b9d1-3de8d59d83f2)
 
 
